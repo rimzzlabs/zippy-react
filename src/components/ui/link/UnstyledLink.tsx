@@ -1,34 +1,25 @@
-import { clsxm } from "@/util/clsxm";
-import { createElement, forwardRef } from "react";
-import type { LinkProps } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { clsxm } from '@/util/clsxm'
 
-export type UnstyledLinkProps = LinkProps;
+import { createElement, forwardRef } from 'react'
+import type { LinkProps } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export const UnstyledLink = forwardRef<HTMLAnchorElement, UnstyledLinkProps>(
-  (prop, ref) => {
-    const {
-      reloadDocument,
-      replace,
-      state,
-      preventScrollReset,
-      relative,
-      to,
-      ...props
-    } = prop;
+export type UnstyledLinkProps = LinkProps
 
-    const c = clsxm("inline-flex items-center", props.className);
+export const UnstyledLink = forwardRef<HTMLAnchorElement, UnstyledLinkProps>((prop, ref) => {
+  const { reloadDocument, replace, state, preventScrollReset, relative, to, ...props } = prop
 
-    if (typeof to === "string" && to.startsWith("http")) {
-      return createElement("a", { ...props, className: c, ref });
-    }
+  const c = clsxm('inline-flex items-center', props.className)
 
-    return (
-      <Link {...prop} className={c} ref={ref}>
-        {props.children}
-      </Link>
-    );
+  if (typeof to === 'string' && to.startsWith('http')) {
+    return createElement('a', { ...props, className: c, ref })
   }
-);
 
-UnstyledLink.displayName = "UnstyledLink";
+  return (
+    <Link {...prop} className={c} ref={ref}>
+      {props.children}
+    </Link>
+  )
+})
+
+UnstyledLink.displayName = 'UnstyledLink'

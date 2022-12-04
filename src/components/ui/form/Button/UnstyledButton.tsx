@@ -1,18 +1,17 @@
-import { clsxm } from "@/util/clsxm";
-import { forwardRef } from "react";
+import { clsxm } from '@/util/clsxm'
 
-export type UnstyledButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
-type B = HTMLButtonElement;
+import { forwardRef } from 'react'
 
-export const UnstyledButton = forwardRef<B, UnstyledButtonProps>(
-  (props, ref) => {
-    const c = clsxm("inline-flex items-center", props.className);
-    return (
-      <button {...props} className={c}>
-        {props.children}
-      </button>
-    );
-  }
-);
+export type UnstyledButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
+type B = HTMLButtonElement
 
-UnstyledButton.displayName = "UnstyledButton";
+export const UnstyledButton = forwardRef<B, UnstyledButtonProps>((props, ref) => {
+  const c = clsxm('inline-flex items-center', props.className)
+  return (
+    <button {...props} className={c}>
+      {props.children}
+    </button>
+  )
+})
+
+UnstyledButton.displayName = 'UnstyledButton'

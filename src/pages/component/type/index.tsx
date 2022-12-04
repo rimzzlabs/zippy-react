@@ -1,3 +1,3 @@
 export default function TypeComponent() {
-  return <p>Component Type</p>;
+  return <p>Component Type</p>
 }
