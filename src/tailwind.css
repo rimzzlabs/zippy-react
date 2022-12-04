@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold text-theme-800 dark:text-theme-200 md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold text-theme-800 dark:text-theme-200 md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold text-theme-800 dark:text-theme-200 md:text-2xl;
+  }
+
+  h4 {
+    @apply text-lg font-bold text-theme-800 dark:text-theme-200 md:text-xl;
+  }
+  h5 {
+    @apply font-bold text-theme-800 dark:text-theme-200 md:text-lg;
+  }
+
+  body {
+    @apply font-primary antialiased dark:bg-theme-800 dark:text-theme-400;
+  }
+}
