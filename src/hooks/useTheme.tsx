@@ -13,10 +13,6 @@ export const useTheme = (): [Theme, () => void] => {
     () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark')),
     []
   )
-  const reverseTheme = {
-    dark: 'light',
-    light: 'dark'
-  }
 
   useEffect(() => {
     const html = document.documentElement
