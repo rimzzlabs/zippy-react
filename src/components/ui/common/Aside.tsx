@@ -2,7 +2,12 @@ import { AsideLink } from '@/components/ui/link'
 
 import { clsxm } from '@/util/clsxm'
 
-import { HiOutlineHome, HiQuestionMarkCircle } from 'react-icons/hi'
+import {
+  HiOutlineCursorClick,
+  HiOutlineHome,
+  HiOutlinePuzzle,
+  HiOutlineQuestionMarkCircle
+} from 'react-icons/hi'
 
 type AsideProps = {
   className?: string
@@ -26,8 +31,16 @@ export const Aside: React.FunctionComponent<AsideProps> = (props) => {
           <AsideLink
             text='Not Found'
             to='/something-in-the-way-mmmmmmmmmmmmmmm'
-            Icon={HiQuestionMarkCircle}
+            Icon={HiOutlineQuestionMarkCircle}
           />
+        </div>
+
+        <div className='flex flex-col py-2 px-3'>
+          <p className='flex items-center text-lg font-semibold mb-3 md:mb-6'>
+            <HiOutlinePuzzle className='mr-2' /> <span>Components</span>
+          </p>
+
+          <AsideLink text='Button' to='/components/button' Icon={HiOutlineCursorClick} />
         </div>
       </div>
     </aside>

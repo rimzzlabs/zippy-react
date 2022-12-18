@@ -11,9 +11,12 @@ export const AsideLink = forwardRef<HTMLAnchorElement, AsideLinkProps>((props, r
     <UnstyledLink
       {...props}
       className='space-x-2 py-2 px-2 hover:bg-theme-100 dark:hover:bg-theme-800'
+      ref={ref}
     >
       <props.Icon className='w-4 h-4' />
       <span className='text-sm font-medium'>{props.text}</span>
     </UnstyledLink>
   )
 })
+
+AsideLink.displayName = 'AsideLink'

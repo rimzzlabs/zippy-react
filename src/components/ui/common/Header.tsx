@@ -21,6 +21,7 @@ export const Header = () => {
           <UnstyledButton
             onClick={toggleTheme}
             className={clsxm(
+              'p-0',
               'w-10 h-10 rounded justify-center',
               'hover:bg-theme-100 dark:hover:bg-theme-700'
             )}
