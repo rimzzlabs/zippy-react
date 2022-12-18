@@ -1,11 +1,11 @@
 import { Child } from '@/types/common'
 
-import React, { Fragment, Suspense, lazy } from 'react'
+import { Fragment, Suspense, lazy } from 'react'
 import { Navigate, Route, Routes as Router } from 'react-router-dom'
 
 type FunComp = Record<string, { default: () => JSX.Element }>
 
-const PRESERVED = import.meta.glob('/src/pages/(_app|404).tsx', {
+const PRESERVED = import.meta.glob('/src/pages/(_app|_loading|404).tsx', {
   eager: true
 }) as FunComp
 
@@ -31,10 +31,11 @@ export const routes = Object.keys(ROUTES).map((route) => {
 export const Routes = () => {
   const App = preservedRoutes?.['_app'] || Fragment
   const NotFound = preservedRoutes?.['404'] || Fragment
+  const Loading = preservedRoutes?.['_loading'] || Fragment
 
   return (
     <App>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loading />}>
         <Router>
           {routes.map(({ path, component: Component = Fragment }) => (
             <Route key={path} path={path} element={<Component />} />
