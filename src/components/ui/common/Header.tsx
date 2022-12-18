@@ -4,9 +4,14 @@ import { useTheme } from '@/hooks'
 
 import { clsxm } from '@/util/clsxm'
 
-import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
+import { HiOutlineMenu, HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 
-export const Header = () => {
+type HeaderProps = {
+  sidebarOpen: boolean
+  toggleSidebar: () => void
+}
+
+export const Header: React.FunctionComponent<HeaderProps> = (props) => {
   const [theme, toggleTheme] = useTheme()
 
   return (
@@ -32,6 +37,17 @@ export const Header = () => {
             ) : (
               <HiOutlineSun className='w-5 h-5' />
             )}
+          </UnstyledButton>
+
+          <UnstyledButton
+            onClick={props.toggleSidebar}
+            className={clsxm(
+              'p-0 md:hidden',
+              'w-10 h-10 rounded justify-center',
+              'hover:bg-theme-100 dark:hover:bg-theme-700'
+            )}
+          >
+            <HiOutlineMenu className='w-5 h-5' />
           </UnstyledButton>
         </div>
       </div>

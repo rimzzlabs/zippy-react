@@ -6,17 +6,19 @@ import type { IconType } from 'react-icons'
 
 type AsideLinkProps = { Icon: IconType; text: string } & UnstyledLinkProps
 
-export const AsideLink = forwardRef<HTMLAnchorElement, AsideLinkProps>((props, ref) => {
-  return (
-    <UnstyledLink
-      {...props}
-      className='space-x-2 py-2 px-2 hover:bg-theme-100 dark:hover:bg-theme-800'
-      ref={ref}
-    >
-      <props.Icon className='w-4 h-4' />
-      <span className='text-sm font-medium'>{props.text}</span>
-    </UnstyledLink>
-  )
-})
+export const AsideLink = forwardRef<HTMLAnchorElement, AsideLinkProps>(
+  ({ Icon, ...props }, ref) => {
+    return (
+      <UnstyledLink
+        {...props}
+        className='space-x-2 py-2 px-2 hover:bg-theme-100 dark:hover:bg-theme-800'
+        ref={ref}
+      >
+        <Icon className='w-4 h-4' />
+        <span className='text-sm font-medium'>{props.text}</span>
+      </UnstyledLink>
+    )
+  }
+)
 
 AsideLink.displayName = 'AsideLink'

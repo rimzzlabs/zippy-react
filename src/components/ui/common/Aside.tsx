@@ -1,7 +1,10 @@
 import { AsideLink } from '@/components/ui/link'
 
+import { useClickOutside } from '@/hooks'
+
 import { clsxm } from '@/util/clsxm'
 
+import { useRef } from 'react'
 import {
   HiOutlineCursorClick,
   HiOutlineHome,
@@ -11,17 +14,21 @@ import {
 
 type AsideProps = {
   className?: string
+  closeSidebar: () => void
 }
 
-export const Aside: React.FunctionComponent<AsideProps> = (props) => {
+export const Aside: React.FunctionComponent<AsideProps> = ({ closeSidebar, ...props }) => {
+  const ref = useRef<null | HTMLElement>(null)
+  useClickOutside(ref, closeSidebar)
+
   return (
-    <aside {...props}>
+    <aside {...props} ref={ref}>
       <div
         className={clsxm(
           'flex flex-col',
           'w-full h-full',
           'space-y-3 md:space-y-6 border-r',
-          'dark:border-r-gray-700 dark:bg-theme-900'
+          'dark:border-r-gray-700 bg-white dark:bg-theme-900'
         )}
       >
         <div className='flex flex-col py-2 px-3'>

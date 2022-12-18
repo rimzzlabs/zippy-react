@@ -19,12 +19,12 @@ export default function ButtonComponentPage() {
         you to do things within the app.
       </p>
 
-      <div className='space-y-8'>
+      <div className='space-y-8 w-full'>
         <div>
           <h3 className='mb-1'>Buttons</h3>
           <h4 className='mb-4'>Regular state (medium) size</h4>
 
-          <div className='flex items-center space-x-2.5'>
+          <div className='flex items-center gap-x-2.5 gap-y-4 flex-wrap'>
             {buttons.map(([name, Component]) => (
               <Component key={name}>{name.replace(/([A-Z])/g, ' $1').trim()}</Component>
             ))}
@@ -35,7 +35,7 @@ export default function ButtonComponentPage() {
           <h3 className='mb-1'>Button Sizes</h3>
           <h4 className='mb-4'>Small to large button</h4>
 
-          <div className='flex items-center space-x-2.5'>
+          <div className='flex items-center gap-x-2.5 gap-y-4 flex-wrap'>
             {buttons.map(([name, Component], i) => (
               <Component key={name} size={sizes[i]}>
                 {name.replace(/([A-Z])/g, ' $1').trim()}
