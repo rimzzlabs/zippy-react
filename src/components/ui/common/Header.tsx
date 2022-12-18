@@ -1,6 +1,6 @@
 import { UnstyledButton } from '@/components/ui/form'
 
-import { useTheme } from '@/hooks/useTheme'
+import { useTheme } from '@/hooks'
 
 import { clsxm } from '@/util/clsxm'
 
@@ -8,6 +8,7 @@ import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 
 export const Header = () => {
   const [theme, toggleTheme] = useTheme()
+
   return (
     <header className='fixed top-0 inset-x-0 h-16'>
       <div className='flex items-center justify-between h-full px-3 border-b dark:border-b-gray-700 dark:bg-theme-900'>
