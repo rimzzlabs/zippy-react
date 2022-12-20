@@ -6,7 +6,12 @@ export default function HomePage() {
 
       <p className={paragraph}>
         To get started, you can explore what components are available to use if you scaffold your
-        next React project with this template
+        next React project with this template.
+      </p>
+
+      <p className={paragraph}>
+        <strong>What should I do?</strong> Remove every page, start build your 1 Billion Dollar App
+        😂.
       </p>
       <p className={paragraph}>
         Note that this work is <strong>still on progress</strong>.
