@@ -31,7 +31,7 @@ export const routes = Object.keys(ROUTES).map((route) => {
 export const Routes = () => {
   const App = preservedRoutes?.['_app'] || Fragment
   const NotFound = preservedRoutes?.['404'] || Fragment
-  const Loading = preservedRoutes?.['_loading'] || Fragment
+  const Loading = preservedRoutes?.['_loading'] || null
 
   return (
     <App>
