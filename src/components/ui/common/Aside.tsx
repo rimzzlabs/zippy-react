@@ -6,6 +6,7 @@ import { clsxm } from '@/util/clsxm'
 
 import { useRef } from 'react'
 import {
+  HiOutlineAnnotation,
   HiOutlineCursorClick,
   HiOutlineHome,
   HiOutlinePuzzle,
@@ -48,6 +49,7 @@ export const Aside: React.FunctionComponent<AsideProps> = ({ closeSidebar, ...pr
           </p>
 
           <AsideLink text='Button' to='/components/button' Icon={HiOutlineCursorClick} />
+          <AsideLink text='Input' to='/components/input' Icon={HiOutlineAnnotation} />
         </div>
       </div>
     </aside>

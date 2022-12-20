@@ -1,21 +1,22 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
-  content: ["./src/**/*.{tsx,jsx}"],
+  darkMode: 'class',
+  content: ['./src/**/*.{tsx,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        primary: ['"Inter"', ...fontFamily.sans],
+        primary: ['"Inter"', ...fontFamily.sans]
       },
       colors: {
         primary: colors.violet,
         secondary: colors.blue,
-        theme: colors.zinc,
-      },
-    },
+        theme: colors.zinc
+      }
+    }
   },
-  plugins: [],
-};
+  plugins: [require('@tailwindcss/forms')]
+}

@@ -19,7 +19,7 @@ export const UnstyledButton = forwardRef<HTMLButtonElement, UnstyledButtonProps>
       {...props}
       className={clsxm(
         'inline-flex items-center',
-        'font-semibold rounded-md outline-none',
+        'font-semibold rounded outline-none',
         'transition-all ring-primary-400',
         'ring-offset-1 ring-offset-primary-100',
         'focus-visible:ring',

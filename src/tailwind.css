@@ -25,4 +25,20 @@
   body {
     @apply font-primary antialiased dark:bg-theme-800 dark:text-theme-400;
   }
+
+  /* REMOVE THESE CODES TO HIDE THE ARROW ON NUMBER INPUT */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+  /* HIDE ARROR END */
 }

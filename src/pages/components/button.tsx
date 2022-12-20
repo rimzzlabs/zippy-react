@@ -1,12 +1,11 @@
 import * as btns from '@/components/ui/form/Button'
 
-const sizes = {
-  0: 'xs',
-  1: 'sm',
-  2: 'md',
-  3: 'lg',
-  4: 'lg'
-} as Record<number, 'xs' | 'sm' | 'md' | 'lg'>
+const buttonSizes = [
+  { title: 'Extra Small', size: 'xs' },
+  { title: 'Small Size', size: 'sm' },
+  { title: 'Medium (default)', size: 'md' },
+  { title: 'Large Size', size: 'lg' }
+] as const
 
 export default function ButtonComponentPage() {
   const buttons = Object.entries(btns)
@@ -36,10 +35,10 @@ export default function ButtonComponentPage() {
           <h4 className='mb-4'>Small to large button</h4>
 
           <div className='flex items-center gap-x-2.5 gap-y-4 flex-wrap'>
-            {buttons.map(([name, Component], i) => (
-              <Component key={name} size={sizes[i]}>
-                {name.replace(/([A-Z])/g, ' $1').trim()}
-              </Component>
+            {buttonSizes.map((btn) => (
+              <btns.PrimaryButton size={btn.size} key={btn.size}>
+                {btn.title}
+              </btns.PrimaryButton>
             ))}
           </div>
         </div>
